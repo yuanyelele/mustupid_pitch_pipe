@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/c_button"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="@string/note_C" />
+        <Button
+            android:id="@+id/d_button"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="@string/note_D" />
+        <Button
+            android:id="@+id/e_button"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="@string/note_E" />
+        <Button
+           android:id="@+id/f_button"
+           android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+           android:text="@string/note_F" />
+        <Button
+            android:id="@+id/g_button"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="@string/note_G" />
+        <Button
+            android:id="@+id/a_button"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="@string/note_A" />
+        <Button
+            android:id="@+id/b_button"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="@string/note_B" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <Space
+            android:layout_weight="0.5"
+            android:layout_height="0dp"
+            android:layout_width="wrap_content" />
+        <Button
+            android:id="@+id/c_sharp_button"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="@string/note_Db" />
+        <Button
+            android:id="@+id/e_flat_button"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="@string/note_Eb" />
+        <Space
+            android:layout_weight="1"
+            android:layout_height="0dp"
+            android:layout_width="wrap_content" />
+        <Button
+            android:id="@+id/f_sharp_button"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="@string/note_Gb" />
+        <Button
+            android:id="@+id/a_flat_button"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="@string/note_Ab" />
+        <Button
+            android:id="@+id/b_flat_button"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="@string/note_Bb" />
+        <Space
+            android:layout_weight="0.5"
+            android:layout_height="0dp"
+            android:layout_width="wrap_content" />
+    </LinearLayout>
+    <NumberPicker
+        android:id="@+id/pitch_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp" />
+</LinearLayout>

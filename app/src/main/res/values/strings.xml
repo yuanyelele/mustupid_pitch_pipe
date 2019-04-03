@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pitch Pipe</string>
+    <string name="note_A" translatable="false">A</string>
+    <string name="note_Bb" translatable="false">A♯/B♭</string>
+    <string name="note_B" translatable="false">B</string>
+    <string name="note_C" translatable="false">C</string>
+    <string name="note_Db" translatable="false">C♯/D♭</string>
+    <string name="note_D" translatable="false">D</string>
+    <string name="note_Eb" translatable="false">D♯/E♭</string>
+    <string name="note_E" translatable="false">E</string>
+    <string name="note_F" translatable="false">F</string>
+    <string name="note_Gb" translatable="false">F♯/G♭</string>
+    <string name="note_G" translatable="false">G</string>
+    <string name="note_Ab" translatable="false">G♯/A♭</string>
+</resources>
