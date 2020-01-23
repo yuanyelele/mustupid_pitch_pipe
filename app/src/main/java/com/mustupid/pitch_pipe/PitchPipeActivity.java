@@ -89,18 +89,14 @@ public class PitchPipeActivity extends AppCompatActivity {
 
     private void setUpPitchPicker() {
         NumberPicker pitchPicker = findViewById(R.id.pitch_picker);
-        pitchPicker.setMaxValue(MAX_PITCH - MIN_PITCH);
-        String[] string_array = new String[MAX_PITCH - MIN_PITCH + 1];
-        for (int i = 0; i <= MAX_PITCH - MIN_PITCH; i++) {
-            string_array[i] = Integer.toString(MIN_PITCH + i);
-        }
-        pitchPicker.setDisplayedValues(string_array);
+        pitchPicker.setMaxValue(MAX_PITCH);
+        pitchPicker.setMinValue(MIN_PITCH);
+        pitchPicker.setValue(mPitch);
         pitchPicker.setWrapSelectorWheel(false);
-        pitchPicker.setValue(mPitch - MIN_PITCH);
         pitchPicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
-                mPitch = newVal + MIN_PITCH;
+                mPitch = newVal;
             }
         });
     }
