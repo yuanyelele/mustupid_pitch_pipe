@@ -34,7 +34,6 @@ public class PitchPipeActivity extends AppCompatActivity {
         ID_TO_NOTE.put(R.id.a_flat_button, Note.Ab);
     }
 
-    private final Button[] mNoteButtons = new Button[NUM_NOTES];
     private int mPitch = DEFAULT_PITCH;
     private SharedPreferences mPreferences;
     private PitchPipe mPitchPipe;
@@ -68,14 +67,14 @@ public class PitchPipeActivity extends AppCompatActivity {
     /* TODO */
     private void setUpNoteButtons() {
         for (int i = 0; i < NUM_NOTES; i++) {
-            final int id = ID_TO_NOTE.keyAt(i);
-            mNoteButtons[i] = findViewById(id);
-            mNoteButtons[i].setOnTouchListener(new Button.OnTouchListener() {
+            final Note note = ID_TO_NOTE.valueAt(i);
+            final Button noteButton = findViewById(ID_TO_NOTE.keyAt(i));
+            noteButton.setOnTouchListener(new Button.OnTouchListener() {
                 @Override
                 public boolean onTouch(View v, MotionEvent event) {
                     switch (event.getAction()) {
                         case MotionEvent.ACTION_DOWN:
-                            return !mPitchPipe.play(ID_TO_NOTE.get(id).getFrequency() * mPitch);
+                            return !mPitchPipe.play(note.getFrequency() * mPitch);
                         case MotionEvent.ACTION_UP:
                         case MotionEvent.ACTION_CANCEL:
                             mPitchPipe.stop();
@@ -90,18 +89,14 @@ public class PitchPipeActivity extends AppCompatActivity {
 
     private void setUpPitchPicker() {
         NumberPicker pitchPicker = findViewById(R.id.pitch_picker);
-        pitchPicker.setMaxValue(MAX_PITCH - MIN_PITCH);
-        String[] string_array = new String[MAX_PITCH - MIN_PITCH + 1];
-        for (int i = 0; i <= MAX_PITCH - MIN_PITCH; i++) {
-            string_array[i] = Integer.toString(MIN_PITCH + i);
-        }
-        pitchPicker.setDisplayedValues(string_array);
+        pitchPicker.setMaxValue(MAX_PITCH);
+        pitchPicker.setMinValue(MIN_PITCH);
+        pitchPicker.setValue(mPitch);
         pitchPicker.setWrapSelectorWheel(false);
-        pitchPicker.setValue(mPitch - MIN_PITCH);
         pitchPicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
-                mPitch = newVal + MIN_PITCH;
+                mPitch = newVal;
             }
         });
     }
